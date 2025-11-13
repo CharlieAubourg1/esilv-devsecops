@@ -1,5 +1,13 @@
 # Projet DevSecOps ESILV BIC A3 DCE 2025-2026
 
+## Groupe
+
+Équipe 7 :
+- Alexandre LOGUT (giougt)
+- Charlie AUBOURG (CharlieAubourg1)
+- Clément CROUAN (ClementCrouan)
+- Jérémie MUCHEMBLED (jeremie-78)
+
 ## Contexte
 
 Dans un environnement de développement moderne, les conteneurs et l'orchestration sont devenus essentiels pour déployer et gérer des applications de manière flexible et évolutive. Docker permet de créer des images de conteneurs pour les différentes composantes d'une application, tandis que Kubernetes permet de les orchestrer pour les déployer à grande échelle. Ce projet vise à déployer une application web connectée à une base de données en utilisant Kubernetes, en mettant en place des Pods pour chaque composant et en configurant des services pour permettre la communication interne et externe.
