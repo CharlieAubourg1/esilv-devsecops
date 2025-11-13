@@ -82,4 +82,4 @@ Créer un Service de type NodePort ou LoadBalancer pour exposer l’application 
 
 ## Conclusion
 
-Ce projet vous permettra d'acquérir une compréhension approfondie des technologies Docker et Kubernetes, ainsi que des compétences pratiques pour déployer et orchestrer des applications web conteneurisées. En complétant ce projet, vous serez capable de déployer une infrastructure basée sur des conteneurs avec une base de données et une application web interconnectées, tout en garantissant une bonne gestion de la sécurité et de la persistance des données.
+Ce projet vous permettra d'acquérir une compréhension approfondie des technologies Docker et Kubernetes, ainsi que des compétences pratiques pour déployer et orchestrer des applications web conteneurisées. En complétant ce projet, vous serez capable de déployer une infrastructure basée sur des conteneurs avec une base de données et une application web interconnectées, tout en garantissant une bonne gestion de la sécurité et de la persistance des données. 
