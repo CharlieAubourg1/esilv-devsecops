@@ -81,17 +81,3 @@ spec:
     - name: mysql-storage
       persistentVolumeClaim:
         claimName: mysql-pvc
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql-service
-spec:
-  type: ClusterIP
-  ports:
-    - port: 3306
-      targetPort: 3306
-  selector:
-    app: mysql
