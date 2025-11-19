@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: mysql-config
 data:
-  MYSQL_DATABASE: mydatabase
+  MYSQL_DATABASE: groupe7
