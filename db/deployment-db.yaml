@@ -44,7 +44,7 @@ metadata:
 spec:
   containers:
     - name: mysql
-      image: mysql:8.0
+      image: db:1.0
       ports:
         - containerPort: 3306
 
