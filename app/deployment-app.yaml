@@ -1,24 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-app
+  name: bakery-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node-app
+      app: bakery-api
   template:
     metadata:
-      name: node-app
       labels:
-        app: node-app
+        app: bakery-api
     spec:
       containers:
-        - name: node
-          image: node-app:1.0
+        - name: bakery-api
+          image: node-app:latest   
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
           env:
             - name: DB_HOST
-              value: "service-db"
+              value: "service-db"      # Nom du service MySQL
             - name: DB_PORT
               value: "3306"
             - name: DB_USER
@@ -32,4 +34,7 @@ spec:
                   name: mysql-secret
                   key: MYSQL_PASSWORD
             - name: DB_NAME
-              value: "groupe7"
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_DATABASE

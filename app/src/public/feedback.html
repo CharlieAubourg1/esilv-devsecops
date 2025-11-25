@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="feedback">
+  <header>
+    <h1>Stock Management - Bakery</h1>
+    <nav class="top-navbar">
+      <ul>
+        <li><a href="index.html">Home page</a></li>
+      </ul>
+    </nav>
+  </header>
+    <div class="feedback-container">
+        <h2>Leave Feedback</h2>
+        <form id="feedback-form">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <textarea id="message" placeholder="Your Message" required></textarea>
+          <h3>Rate the Features:</h3>
+          <div class="rating-group">
+            <label for="rate-add">Add a Product:</label>
+            <select id="rate-add" required>
+              <option value="">--</option>
+              <option value="1">1 / 5</option>
+              <option value="2">2 / 5</option>
+              <option value="3">3 / 5</option>
+              <option value="4">4 / 5</option>
+              <option value="5">5 / 5</option>
+            </select>
+          </div>
+          <div class="rating-group">
+            <label for="rate-update">Update Stock:</label>
+            <select id="rate-update" required>
+              <option value="">--</option>
+              <option value="1">1 / 5</option>
+              <option value="2">2 / 5</option>
+              <option value="3">3 / 5</option>
+              <option value="4">4 / 5</option>
+              <option value="5">5 / 5</option>
+            </select>
+          </div>
+          <div class="rating-group">
+            <label for="rate-inventory">Inventory:</label>
+            <select id="rate-inventory" required>
+              <option value="">--</option>
+              <option value="1">1 / 5</option>
+              <option value="2">2 / 5</option>
+              <option value="3">3 / 5</option>
+              <option value="4">4 / 5</option>
+              <option value="5">5 / 5</option>
+            </select>
+          </div>
+          <div class="rating-group">
+            <label for="rate-delete">Delete Product:</label>
+            <select id="rate-delete" required>
+              <option value="">--</option>
+              <option value="1">1 / 5</option>
+              <option value="2">2 / 5</option>
+              <option value="3">3 / 5</option>
+              <option value="4">4 / 5</option>
+              <option value="5">5 / 5</option>
+            </select>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+        <p id="response-msg"></p>
+      </div>
+      <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: info@leobakery.com</p>
+            <p>Phone: +33 1 34 71 02 76</p>
+            <p>Address: 13 Rue Charles de Gaulle, 95270 Luzarches, France</p>
+          </div>
+          <div class="footer-section">
+            <p>© 2025 - Data from Stock bakery Leo</p>
+          </div>
+        </div>
+      </footer>
+      <script src="script.js"></script>
+</body>
+</html>

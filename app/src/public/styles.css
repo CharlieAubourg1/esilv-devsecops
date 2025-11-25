@@ -1,0 +1,590 @@
+/* styles for page index.html */
+
+body.index {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #333;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  body.index header {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(5px);
+  }
+  
+  body.index h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  /* Main Content */
+  body.index main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Sections */
+  body.index section {
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titles */
+  body.index h2 {
+    font-size: 1.5rem;
+    color: #2575fc;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styling */
+  body.index form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body.index label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  body.index input,
+  body.index select,
+  body.index button,
+  body.index textarea {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  body.index button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  body.index button:hover {
+    background-color: #1a5edb;
+  }
+  
+  /* Table Styling */
+  body.index table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  body.index thead {
+    background-color: #2575fc;
+    color: white;
+  }
+  
+  body.index th,
+  body.index td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  body.index tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* for ingredients area text */
+  body.index #ingredients {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  body.index footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(5px);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Navigation Bar */
+  body.index .top-navbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+  }
+  
+  body.index .top-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  body.index .top-navbar ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 6px;
+  }
+  
+  body.index .top-navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  /* Custom Select/Input IDs */
+  body.index #deleteType,
+  body.index #category,
+  body.index #updateType {
+    width: 200px;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  body.index .top-navbar ul {
+    justify-content: center;
+    position: relative;
+  }
+  
+  /* Positionner le logout à droite */
+  body.index .top-navbar ul li.logout-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Style du lien logout */
+  body.index .top-navbar ul li.logout-link a {
+    background-color: red;
+  }
+
+/*style CSS for login.html */
+
+body.login {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body.login .login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  body.login h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    width: 100%;
+  }
+  
+  body.login form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  body.login label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  body.login input[type="text"],
+  body.login input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  body.login button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  body.login button:hover {
+    background-color: #1a5edb;
+  }
+  
+/*style CSS for feedback.html */
+
+body.feedback header {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+body.feedback .top-navbar {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+body.feedback .top-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+body.feedback .top-navbar ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 6px;
+}
+
+body.feedback .top-navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+body.feedback {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #333;
+  min-height: 100vh;
+}
+
+body.feedback footer {
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(5px);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Container */
+body.feedback .feedback-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+body.feedback h2 {
+  color: #2575fc;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Labels & Rating Groups */
+body.feedback .rating-group {
+  margin-bottom: 15px;
+}
+
+body.feedback label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Inputs, Selects, Textareas */
+body.feedback input,
+body.feedback textarea,
+body.feedback select,
+body.feedback button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+body.feedback textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit Button */
+body.feedback button {
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+body.feedback button:hover {
+  background-color: #1a5edb;
+}
+
+/* Response Message */
+body.feedback #response-msg {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/*style CSS for create_account.html */
+
+.create * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.create {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.create .create-container {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.create .create-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.create form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create label {
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.create input[type="text"],
+.create input[type="password"],
+.create input[type="email"],
+.create select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.create button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create button:hover {
+  background-color: #1a5edb;
+}
+
+/*style CSS for forgot_password.html */
+
+body.forgot {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.forgot .forgot-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.forgot h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  width: 100%;
+}
+
+body.forgot form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.forgot label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+body.forgot input[type="text"],
+body.forgot input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+body.forgot button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+body.forgot button:hover {
+  background-color: #1a5edb;
+}
+
+body.forgot p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+body.forgot a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+body.forgot a:hover {
+  text-decoration: underline;
+}
+
+/*style CSS for forgot_password.html */
+
+body.logout {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.logout .logout-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.logout .logout-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  width: 100%;
+}
+
+body.logout .logout-container a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: #2575fc;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+body.logout .logout-container a:hover {
+  background-color: #1a5edb;
+}

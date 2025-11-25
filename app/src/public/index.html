@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stock Management - Bakery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="index">
+  <header>
+    <h1>Stock Management - Bakery</h1>
+    <nav class="top-navbar">
+      <ul>
+        <li><a href="#add-product">Add Product</a></li>
+        <li><a href="#update-stock">Update Stock</a></li>
+        <li><a href="#inventory">Inventory</a></li>
+        <li><a href="#Delete-product">Delete product</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li class="logout-link"><a href="logout.html">LOGOUT</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Add Product Section -->
+    <section id="add-product">
+      <h2>Add a Product</h2>
+      <form id="add-product-form">
+        <label for="product-name">Product Name:</label>
+        <input type="text" id="product-name" name="product-name" required />
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+          <option value="">--Select Category--</option>
+          <option value="Bread">Bread</option>
+          <option value="Pastry">Pastry</option>
+          <option value="Patisserie">Patisserie</option>
+          <option value="Snack">Snack</option>
+        </select>
+
+        <label for="price">Price (€):</label>
+        <input type="number" id="price" name="price" step="0.01" min="0" required />
+
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="ingredients" rows="3" placeholder="List ingredients"></textarea>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" step="1" min="0" required />
+
+        <label for="production-date">Production Date:</label>
+        <input type="date" id="production-date" name="production-date" required />
+
+        <label for="expiration-date">Expiration Date:</label>
+        <input type="date" id="expiration-date" name="expiration-date" />
+
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <!-- Update Stock Section -->
+    <section id="update-stock">
+      <h2>Update Stock</h2>
+      <form id="update-stock-form">
+        <label for="updateType">Select product with:</label>
+        <select id="updateType" name="update-product" required>
+          <option value="id">ID</option>
+          <option value="name">Name</option>
+        </select>
+
+      <label for="updateQuery">ID or Name of product:</label>
+      <input type="text" id="updateQuery" name="updateQuery" required />
+
+      <label for="quantity">New Quantity:</label>
+      <input type="number" id="new_quantity" name="quantity" min="0" required />
+
+<button id="button_update">Update Product</button>
+      </form>
+    </section>
+
+    <!-- Inventory Section -->
+    <section id="inventory">
+      <h2>Inventory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product name</th>
+            <th>Category</th>
+            <th>Price (€)</th>
+            <th>Ingredients</th>
+            <th>Quantity</th>
+            <th>Production Date</th>
+            <th>Expiration Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Product data will go here dynamically -->
+        </tbody>
+      </table>
+    </section>
+  <!-- section delete -->
+    <section id="Delete-product">
+      <h2>Delete product</h2>
+        <form id="deleteForm">
+        <label for="deleteType">Delete with :</label>
+        <select id="deleteType" name="deleteType">
+          <option value="id">ID</option>
+          <option value="name">Name</option>
+        </select>
+        <label for="deleteQuery">Value :</label>
+        <input type="text" id="deleteQuery" name="deleteQuery" placeholder="Enter ID ou name of product">
+        <button id="button_delete" type="submit">Delete</button>
+      </form>
+      <div id="deleteResult" style="margin-top: 20px;"></div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: info@leobakery.com</p>
+        <p>Phone: +33 1 34 71 02 76</p>
+        <p>Address: 13 Rue Charles de Gaulle, 95270 Luzarches, France</p>
+      </div>
+      <div class="footer-section">
+        <p>© 2025 - Data from Stock bakery Leo</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
