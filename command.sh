@@ -25,3 +25,9 @@ docker images
 kubectl apply -f deployment-app.yaml
 kubectl apply -f deployment-app.yaml
 kubectl get pods
+kubectl get pods
+kubectl get deployments
+kubectl scale deployment bakery-api --replicas=0
+kubectl scale deployment bakery-api --replicas=1 # restart
+kubectl delete pod mysql-pod
+kubectl get pods
