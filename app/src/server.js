@@ -64,7 +64,7 @@ app.get("/products", (req, res) => {
 
 
 // start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(` Start server on http://localhost:${PORT}`);
 });
 
