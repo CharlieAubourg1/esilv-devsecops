@@ -5,8 +5,6 @@
 Équipe 7 :
 - Alexandre LOGUT (giougt)
 - Charlie AUBOURG (CharlieAubourg1)
-- Clément CROUAN (ClementCrouan)
-- Jérémie MUCHEMBLED (jeremie-78)
 
 ## Contexte
 
