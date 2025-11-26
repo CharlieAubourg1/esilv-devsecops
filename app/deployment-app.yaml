@@ -14,25 +14,22 @@ spec:
     spec:
       containers:
         - name: bakery-api
-          image: node-app:latest   
+          image: node-app:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           env:
             - name: DB_HOST
-              value: "service-db"      # Nom du service MySQL
+              value: "mysql-service"      # Nom du service MySQL
             - name: DB_PORT
               value: "3306"
             - name: DB_USER
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-secret
-                  key: MYSQL_USER
+              value: "root"               # Utilisateur root
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL_PASSWORD
+                  key: MYSQL_ROOT_PASSWORD
             - name: DB_NAME
               valueFrom:
                 configMapKeyRef:

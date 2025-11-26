@@ -4,12 +4,8 @@ metadata:
   name: mysql-secret
 type: Opaque
 data:
-  # echo -n "rootpassword" | base64
-  MYSQL_ROOT_PASSWORD: cm9vdHBhc3N3b3Jk
-  # echo -n "userpassword" | base64
-  MYSQL_PASSWORD: dXNlcnBhc3N3b3Jk
-  # echo -n "myuser" | base64
-  MYSQL_USER: bXl1c2Vy
+  # mot de passe root encodé en base64
+  MYSQL_ROOT_PASSWORD: Qm9uam91ciNKdWxpZW4x
 
 ---
 
@@ -18,7 +14,7 @@ kind: ConfigMap
 metadata:
   name: mysql-config
 data:
-  MYSQL_DATABASE: groupe7
+  MYSQL_DATABASE: BakeryManagement
 
 ---
 
@@ -54,18 +50,6 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: MYSQL_ROOT_PASSWORD
-
-        - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-              key: MYSQL_PASSWORD
-
-        - name: MYSQL_USER
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-              key: MYSQL_USER
 
         - name: MYSQL_DATABASE
           valueFrom:
