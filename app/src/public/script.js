@@ -3,7 +3,7 @@ if (document.body.classList.contains("index")) {
   // GET and display products
   async function fetchProducts() {
       try {
-          const response = await fetch("http://localhost:3000/products", {
+          const response = await fetch("http://127.0.0.1:3000/products", {
               method: "GET",
               headers: { "Content-Type": "application/json" },
           });
@@ -55,7 +55,7 @@ if (document.body.classList.contains("index")) {
       };
 
       try {
-          const response = await fetch("http://localhost:3000/products", {
+          const response = await fetch("http://127.0.0.1:3000/products", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(productData),
