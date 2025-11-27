@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stock Management - Bakery</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="index">
   <header>
     <h1>Stock Management - Bakery</h1>
@@ -42,7 +44,7 @@
 
         <label for="ingredients">Ingredients:</label>
         <textarea id="ingredients" name="ingredients" rows="3" placeholder="List ingredients"></textarea>
-        
+
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" step="1" min="0" required />
 
@@ -66,13 +68,13 @@
           <option value="name">Name</option>
         </select>
 
-      <label for="updateQuery">ID or Name of product:</label>
-      <input type="text" id="updateQuery" name="updateQuery" required />
+        <label for="updateQuery">ID or Name of product:</label>
+        <input type="text" id="updateQuery" name="updateQuery" required />
 
-      <label for="quantity">New Quantity:</label>
-      <input type="number" id="new_quantity" name="quantity" min="0" required />
+        <label for="quantity">New Quantity:</label>
+        <input type="number" id="new_quantity" name="quantity" min="0" required />
 
-<button id="button_update">Update Product</button>
+        <button id="button_update">Update Product</button>
       </form>
     </section>
 
@@ -97,10 +99,10 @@
         </tbody>
       </table>
     </section>
-  <!-- section delete -->
+    <!-- section delete -->
     <section id="Delete-product">
       <h2>Delete product</h2>
-        <form id="deleteForm">
+      <form id="deleteForm">
         <label for="deleteType">Delete with :</label>
         <select id="deleteType" name="deleteType">
           <option value="id">ID</option>
@@ -127,6 +129,142 @@
       </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script>
+    if (document.body.classList.contains("index")) {
+      // code for index.html page
+      // GET and display products
+      async function fetchProducts() {
+        try {
+          const response = await fetch("http://127.0.0.1:3000/products", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          });
+
+          if (response.ok) {
+            const products = await response.json();
+            console.log("Product catch:", products);
+
+            const tableBody = document.querySelector("#inventory tbody");
+            tableBody.innerHTML = ""; // Clear old rows
+
+            products.forEach((product) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                      <td>${product.id || "-"}</td>
+                      <td>${product.product_name || "-"}</td>
+                      <td>${product.category || "-"}</td>
+                      <td>${product.price || "-"}</td>
+                      <td>${product.ingredients || "-"}</td>
+                      <td>${product.quantity || "0"}</td>
+                      <td>${product.productionDate || "-"}</td>
+                      <td>${product.expirationDate || "-"}</td>
+                  `;
+              tableBody.appendChild(row);
+            });
+          } else {
+            console.error("Error getting products.");
+          }
+        } catch (error) {
+          console.error("Error with request:", error);
+        }
+      }
+
+      // Call function to fetch data
+      fetchProducts();
+
+      // Add new product
+      document.getElementById("add-product-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const productData = {
+          product_name: document.getElementById("product-name").value,
+          category: document.getElementById("category").value,
+          price: parseFloat(document.getElementById("price").value),
+          ingredients: document.getElementById("ingredients").value,
+          quantity: document.getElementById("quantity").value,
+          productionDate: document.getElementById("production-date").value,
+          expirationDate: document.getElementById("expiration-date").value || null,
+        };
+
+        try {
+          const response = await fetch("http://127.0.0.1:3000/products", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(productData),
+          });
+
+          if (response.ok) {
+            alert("Product added successfully!");
+            fetchProducts(); // Reload data
+            event.target.reset(); // Reset form
+          } else {
+            alert("Failed to add the product.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred.");
+        }
+      });
+
+      // DELETE a product
+      document.getElementById("button_delete").addEventListener("click", async (event) => {
+        event.preventDefault();
+        const deleteType = document.getElementById("deleteType").value.trim();
+        const deleteQuery = document.getElementById("deleteQuery").value.trim();
+
+        try {
+          const response = await fetch("/products/delete-product", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ deleteType, deleteQuery }),
+          });
+
+          if (!response.ok) {
+            const err = await response.json();
+            throw new Error(err.error || "Error in delete.");
+          }
+
+          const data = await response.json();
+          alert(data.message || "Product deleted successfully!");
+          fetchProducts(); // Update data
+          document.getElementById("deleteForm").reset(); // Reset form
+        } catch (error) {
+          console.error("Error:", error.message);
+          alert(error.message);
+        }
+      });
+
+      // Update product
+      document.getElementById("button_update").addEventListener("click", async (event) => {
+        event.preventDefault();
+
+        const updateType = document.getElementById("updateType").value.trim();
+        const updateQuery = document.getElementById("updateQuery").value.trim();
+        const quantity = document.getElementById("new_quantity").value.trim();
+
+        try {
+          const response = await fetch("/products/update-product", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ updateType, updateQuery, quantity }),
+          });
+
+          if (!response.ok) {
+            const err = await response.json();
+            throw new Error(err.error || "Error in update.");
+          }
+
+          const data = await response.json();
+          alert(data.message || "Product updated successfully!");
+          fetchProducts(); // Update data
+          document.getElementById("update-stock-form").reset(); // Reset form
+        } catch (error) {
+          console.error("Error:", error.message);
+          alert(error.message);
+        }
+      });
+    } 
+  </script>
 </body>
+
 </html>
